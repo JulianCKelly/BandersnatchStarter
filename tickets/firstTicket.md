@@ -1,4 +1,4 @@
-# Build Sprint 1: Database Operations
+∫# Build Sprint 1: Database Operations
 
 To begin work on this ticket, make sure you have finished:
 - Getting locally setup.

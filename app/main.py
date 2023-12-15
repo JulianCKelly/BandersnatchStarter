@@ -10,7 +10,7 @@ from app.data import Database
 from app.graph import chart
 from app.machine import Machine
 
-SPRINT = 0
+SPRINT = 1
 APP = Flask(__name__)
 
 
@@ -28,7 +28,7 @@ def home():
 def data():
     if SPRINT < 1:
         return render_template("data.html")
-    db = Database()
+    db = Database('monsters')
     return render_template(
         "data.html",
         count=db.count(),
