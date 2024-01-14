@@ -40,7 +40,7 @@ def data():
 def view():
     if SPRINT < 2:
         return render_template("view.html")
-    db = Database()
+    db = Database('monsters')
     options = ["Level", "Health", "Energy", "Sanity", "Rarity"]
     x_axis = request.values.get("x_axis") or options[1]
     y_axis = request.values.get("y_axis") or options[2]
