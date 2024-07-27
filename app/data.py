@@ -12,8 +12,8 @@ class Database:
     load_dotenv()
     database = MongoClient(getenv("DB_URL"), tlsCAFile=where())["Bandersnatch"]
 
-    def __init__(self, collection: str):
-        self.collection = self.database[collection]
+    def __init__(self):
+        self.collection = self.database['monsters']
 
     def seed(self, amount):
         seed_data = [Monster().to_dict() for _ in range(amount)]
@@ -40,5 +40,6 @@ class Database:
 
 # This is how I went about seeding the data
 if __name__ == '__main__':
-    db = Database('monsters')
-    # db.seed(1000)
+    db = Database()
+    db.reset()
+    db.seed(5000)
